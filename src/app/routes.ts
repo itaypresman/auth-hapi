@@ -2,16 +2,18 @@ const AppController = require('./app.controller');
 const authMiddleware = require('./auth.middleware');
 
 
-const routes = [
+const appController = new AppController();
+
+export default [
     {
         method: 'POST',
         path: '/login',
-        handler: AppController.login,
+        handler: appController.login,
     }, {
         method: 'GET',
         path: '/user',
         config: {
-            handler: AppController.getUser,
+            handler: appController.getUser,
             pre: [{
                 assign: 'auth',
                 method: authMiddleware
@@ -19,6 +21,3 @@ const routes = [
         }
     }
 ];
-
-
-module.exports = routes;
