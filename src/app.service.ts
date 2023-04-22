@@ -1,7 +1,7 @@
 import axios, {AxiosResponse} from 'axios';
-import jwt from 'jsonwebtoken';
-import {keyCloak} from '@auth-hapi/config';
-import {con} from '@auth-hapi/mysql';
+import * as jwt from 'jsonwebtoken';
+import {keyCloak} from './config';
+import {con} from './mysql';
 
 
 class AppService {

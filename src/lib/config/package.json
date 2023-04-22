@@ -1,8 +1,0 @@
-{
-  "name": "@auth-hapi/config",
-  "version": "1.0.0",
-  "main": "index.ts",
-  "dependencies": {
-    "dotenv": "^16.0.3"
-  }
-}

@@ -1,5 +1,5 @@
-const AppController = require('./app.controller');
-const authMiddleware = require('./auth.middleware');
+import AppController from './app.controller';
+import authMiddleware from './auth.middleware';
 
 
 const appController = new AppController();

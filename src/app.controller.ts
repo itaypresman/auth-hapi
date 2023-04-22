@@ -2,7 +2,7 @@ import AppService from './app.service';
 
 
 export default class AppController {
-    login = async (req, h): Promise<LoginResponse | void> => {
+    async login (req, h): Promise<LoginResponse | void> {
         const {email, password} = req.payload;
 
         try {
@@ -12,7 +12,7 @@ export default class AppController {
             h.response(error.message).code(401);
         }
     };
-    getUser = async (req, h): Promise<User | void> => {
+    async getUser(req, h): Promise<User | void> {
         try {
             const token: string = req.headers.authorization.split(' ')[1];
             const user: User | null = await AppService.getUserInfo(token);
@@ -23,7 +23,8 @@ export default class AppController {
 
             return user;
         } catch (e) {
-            h.response('internal server error').code(500);
+            console.log(e);
+            return h.response('internal server error').code(500);
         }
     };
 }

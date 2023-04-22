@@ -1,11 +1,11 @@
 import * as mysql from 'mysql2';
-import * as Config from '@auth-hapi/config';
+import * as Config from './config';
 
 
 let connection = null;
 
-export const connect = (): void => {
-    connection = mysql.createConnection(Config.mysql);
+export const connect = async (): Promise<void> => {
+    connection = await mysql.createConnection(Config.mysql).promise();
 };
 
 export const disconnect = (): void => {
