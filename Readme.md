@@ -18,5 +18,5 @@
 <p>Once the installation and configuration are complete, you can run the project using the following command:</p>
 <pre>
 <code>npx tsc</code>
-<code>node ./dist/app</code>
+<code>node ./dist/index.js</code>
 </pre>
